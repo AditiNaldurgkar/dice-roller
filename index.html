@@ -13,6 +13,8 @@
         border-color: black;
         display: block;
         margin: 20px auto;
+        box-shadow: 2px 2px 5px 5px grey;
+        border-radius: 10px;
     }
     .main-img{
         height: 350px;
@@ -28,13 +30,48 @@
         border-radius: 5px;
         height: 40px;
         font-size: larger;
+        cursor: pointer;
+    }
+    h1{
+        text-align: center;
+        background-color: brown;
     }
 
 </style>
 <body>
+    <h1>ROLL THE DICE</h1>
     <div class="container">
-        <img src="six.webp" class="main-img">
+        <img src="six.webp" class="main-img" id="img">
         <button class="btn" onclick="rolldice()">Roll now</button>
+        <script>
+            const img = document.getElementById("img");
+        function rolldice() {
+            const min = 1;
+            const max = 7;
+            const num = Math.floor(Math.random() * (max - min)) + min;
+            if (num == 1) {
+                img.src = "one.png";
+            }
+            else if (num == 2) {
+                img.src = "two.png";
+            }
+            else if (num == 3) {
+                img.src = "three.png";
+            }
+            else if (num == 4) {
+                img.src = "four.png";
+            }
+            else if (num == 5) {
+                img.src = "five.jpg";
+            }
+            else {
+                img.src = "six.webp";
+            }
+        }
+
+
+        </script>
+        
     </div>
 </body>
 </html>
